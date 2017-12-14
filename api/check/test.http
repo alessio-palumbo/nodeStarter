@@ -1,0 +1,21 @@
+### User
+
+### Register User
+POST http://localhost:7000/auth/register
+Content-Type: application/json
+
+{
+  "email": "a@a.com",
+  "firstName": "jane",
+  "lastName": "doe",
+  "password": "123456"
+}
+
+### Sign In User
+POST http://localhost:7000/auth
+Content-Type: application/json
+
+{
+  "email": "a@a.com",
+  "password": "123456"
+}
