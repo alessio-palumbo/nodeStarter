@@ -4,21 +4,9 @@ const authMiddleware = require('../middleware/auth')
 const router = express.Router()
 
 // Register
-router.post('/auth/register',
-  // Middlewate that handles the registration process
-  authMiddleware.register,
-  // json handler
-  authMiddleWare.signJWTForUser
-  // (req, res) => res.json({user: req.user})
-)
+router.post('/auth/register', authMiddleware.register, authMiddleware.signJWTForUser)
 
 // Sign In
-router.post('auth',
-  // Middleware that handles hte sign in
-  authMiddleware.signIn,
-  // json handler
-  authMiddleware.signJWTForUser
-  // (req, res) => res.json({ user: req.user })
-)
+router.post('/auth', authMiddleware.signIn, authMiddleware.signJWTForUser)
 
 module.exports = router
